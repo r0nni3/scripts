@@ -15,5 +15,8 @@ ENVIRONMENT_PARAMETER=${EY_ENVIRONMENT:+"-e $EY_ENVIRONMENT"}
 CHECK_URL_COMMAND=${EY_APP_URL:+"check_url $EY_APP_URL"}
 
 gem install engineyard --no-ri --no-rdoc
-ey deploy --api-token "${EY_API_TOKEN}" "${ENVIRONMENT_PARAMETER}"
+
+echo ${ENVIRONMENT_PARAMETER}
+
+ey deploy --api-token "${EY_API_TOKEN}" ${ENVIRONMENT_PARAMETER}
 ${CHECK_URL_COMMAND}
